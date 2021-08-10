@@ -11,6 +11,7 @@ const Header = (props) => {
                     placeholder="Type here to search..."
                     className="search"
                     value={props.searchText}
+                    onChange={props.onSearch}
                 />
             </aside>
         </header>

@@ -1,6 +1,6 @@
 import React from "react";
 
-function Header() {
+const Header = (props) => {
     return (
         <header className="app-header">
             <h1 className="app-header__title">Super Sticky Notes</h1>
@@ -10,10 +10,11 @@ function Header() {
                     type="text"
                     placeholder="Type here to search..."
                     className="search"
+                    value={props.searchText}
                 />
             </aside>
         </header>
     );
-}
+};
 
 export default Header;

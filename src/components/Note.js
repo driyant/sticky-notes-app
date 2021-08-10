@@ -1,6 +1,6 @@
 import React from "react";
 
-function Note() {
+const Note = () => {
     return (
         <li className="note">
             <input type="text" placeholder="Title" className="note__title" />

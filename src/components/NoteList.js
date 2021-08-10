@@ -1,9 +1,11 @@
 import React from "react";
 import Note from "./Note.js";
 
-function NoteList() {
+const NoteList = (props) => {
+    const renderNotes = (note) => <Note key={note.id} note={note} />;
+    const noteElementLists = props.notes.map(renderNotes);
     return <ul className="notes-list">
-        <Note />
+        {noteElementLists}
     </ul>;
 }
 

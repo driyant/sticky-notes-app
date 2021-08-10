@@ -44,7 +44,7 @@ class App extends Component {
                 }
             }
         };
-        const updatedNotes = this.state.notes(updateIdMatch);
+        const updatedNotes = this.state.notes.map(updateIdMatch);
         this.setState({notes:updatedNotes});
     }
 

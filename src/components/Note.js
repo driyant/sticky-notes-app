@@ -1,12 +1,18 @@
 import React from "react";
 
-const Note = () => {
+const Note = (props) => {
     return (
         <li className="note">
-            <input type="text" placeholder="Title" className="note__title" />
+            <input 
+                type="text" 
+                placeholder="Title" 
+                className="note__title" 
+                value={props.note.title}
+            />
             <textarea
                 placeholder="Description..."
                 className="note__description"
+                value={props.note.description}
             />
             <span className="note__delete">X</span>
         </li>

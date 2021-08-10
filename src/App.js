@@ -10,7 +10,7 @@ class App extends Component {
             id: 0,
             title: "eat",
             description: "reese peanut butter cups",
-            doesMatchSearch: true
+            doesMatchSearch: false
           },
           {
             id: 1,

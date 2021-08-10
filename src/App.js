@@ -29,11 +29,30 @@ class App extends Component {
         this.setState({notes:neweNotes});
     }
 
+    // This function for edit note
+    onType = (editId,updatedKey,updatedValue) => {
+        const updateIdMatch = (note) => {
+            if(note.id !== editId) {
+                return note;
+            } else {
+                if(updatedKey === "title") {
+                    note.title = updatedValue;
+                    return note;
+                } else {
+                    note.description = updatedValue;
+                    return note;
+                }
+            }
+        };
+        const updatedNotes = this.state.notes(updateIdMatch);
+        this.setState({notes:updatedNotes});
+    }
+
     render() {
         return (
             <div>
                 <Header searchText={this.state.searchText} addNote={this.addNote} />
-                <NoteList notes={this.state.notes} />
+                <NoteList notes={this.state.notes} onType={this.onType} />
             </div>
         );
     }

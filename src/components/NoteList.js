@@ -4,7 +4,7 @@ import Note from "./Note.js";
 const NoteList = (props) => {
     const keepSearchMatches = (note) => note.doesMatchSearch;
     const searchMatches = props.notes.filter(keepSearchMatches);
-    const renderNotes = (note) => <Note key={note.id} note={note} />;
+    const renderNotes = (note) => <Note key={note.id} note={note} onType={props.onType}/>;
     const noteElementLists = searchMatches.map(renderNotes);
     return <ul className="notes-list">
         {noteElementLists}

@@ -72,6 +72,13 @@ class App extends Component {
         });
     }
 
+    // This is for remove note
+    handleRemove = (deleteId) => {
+        const isNotIdMatch = (note) => note.id !== deleteId;
+        const updatedNotes = this.state.notes.filter(isNotIdMatch);
+        this.setState({notes:updatedNotes});
+    }
+
     render() {
         return (
             <div>
@@ -82,7 +89,8 @@ class App extends Component {
                 />
                 <NoteList 
                     notes={this.state.notes} 
-                    onType={this.onType} 
+                    onType={this.onType}
+                    remove={this.handleRemove} 
                 />
             </div>
         );

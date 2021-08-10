@@ -1,18 +1,23 @@
 import React from "react";
 
 const Note = (props) => {
+    
     const updateTitle = (e) => {
         // console.log(e.target.value);
         const updatedValue = e.target.value;
         const editId = props.note.id;
         props.onType(editId, "title", updatedValue);
     }
+
     const updateDescription = (e) => {
         // console.log(e.target.value)
         const updatedValue = e.target.value;
         const editId = props.note.id;
         props.onType(editId,"description",updatedValue);
     }
+
+    const removeNote = () => props.remove(props.note.id);
+
     return (
         <li className="note">
             <input 
@@ -28,7 +33,10 @@ const Note = (props) => {
                 value={props.note.description}
                 onChange={updateDescription}
             />
-            <span className="note__delete">X</span>
+            <span 
+                className="note__delete" 
+                onClick={removeNote}> X
+            </span>
         </li>
     );
 }
